@@ -1,0 +1,22 @@
+﻿@model IEnumerable<WypozyczalniaGier.Models.Rental>
+
+<h2>Lista wypożyczeń</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Klient</th>
+            <th>Tytuł gry</th>
+            <th>Data wypożyczenia</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var rental in Model)
+        {
+            <tr>
+                <td>@rental.Client.Email</td>
+                <td>@rental.GameTitle</td>
+                <td>@rental.RentalDate.ToString("dd-MM-yyyy")</td>
+            </tr>
+        }
+    </tbody>
+</table>
